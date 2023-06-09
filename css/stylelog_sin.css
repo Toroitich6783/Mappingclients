@@ -367,8 +367,20 @@
 	.for_login a{
 		color:#FBFE72;
 	}
+	.signupMessage1{
+		color: red; 
+		margin-top: 500px;
+		margin-left: 100px;
 
-
+	}
+.continue-button{
+	display: none; 	
+		position: absolute; 
+		margin-top: 59px; 
+		margin-left:220px; 
+		color:green
+}
+/* Mobile setting Start */
 	@media (max-width: 480px) {
 		#btn_register{
 			width:50%;
@@ -436,6 +448,22 @@
 		font-size:18px;
 		border-radius: 8px;
 		float:left;
+	}
+
+	.signupMessage1{
+		color: red; 
+		margin-top: 450px;
+		margin-left: 0px;
+		font-size: 12px;
+		/* width: 100%; */
+
+	}
+	.continue-button{
+		display: none; 	
+			position: absolute; 
+			margin-top: 100px; 
+			margin-left:35px; 
+			background-color: red;
 	}
 	}
 	

@@ -83,7 +83,7 @@
 
 
     <div class="main">
-        <div class="caption">Sign</div>
+        <div class="caption">Sign In</div>
         <div class="container">
             <div class="text">Create an account</div>
             <form onsubmit="signup(event)" id="form_login" style="height:300px" required>
@@ -109,7 +109,7 @@
                    </div>
                 </div>
             </form>
-            <div id="signupMessage" style="color: red;"></div>
+            <div id="signupMessage"  class= "signupMessage1"></div>
         </div>
     </div>
     </body>
@@ -156,13 +156,13 @@
                 password.value = '';
                 setTimeout(function() {
                     signupMessage.textContent = '';
-                }, 2000);
+                }, 3000);
             })
             .catch(function(err) {
                 signupMessage.textContent = "Error: " + err;
                 setTimeout(function() {
                     signupMessage.textContent = '';
-                }, 2000);
+                }, 3000);
             });
             console.log(obj);
         };
