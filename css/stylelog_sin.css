@@ -424,6 +424,18 @@
 		
 	}
 
-	
+	#btn_sign_in{
+		width:40%;
+		padding:5px;
+		margin-left:25%;
+		margin-top:10px;
+		background-color: #AA44DA;
+		color:white;
+		font-weight: bold;
+		border:none;
+		font-size:18px;
+		border-radius: 8px;
+		float:left;
+	}
 	}
 	
