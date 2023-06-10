@@ -94,10 +94,14 @@
                 <div class="nav-item dropdown">
                     <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Others</a>
                     <div class="dropdown-menu fade-up m-0">
-                        <a href="MappingClients.html" class="dropdown-item">Map Clients</a>
-                        <a href="ecomClients.html" class="dropdown-item">Client Location</a>
-                        <a href="Datamanagement.html" class="dropdown-item">Data Management</a>
-                        <a href="price.html" class="dropdown-item">Pricing Plan</a>
+                      <a href="MappingClients.html" class="dropdown-item">Map Clients</a>
+                      <a href="ecomClients.html" class="dropdown-item">Client Location</a>
+                      <a href="Datamanagement.html" class="dropdown-item">Data Management</a>
+                      <a href="price.html" class="dropdown-item">Pricing Plan</a>
+                      <a href="feature.html" class="dropdown-item">Features</a>
+                      <a href="team.html" class="dropdown-item">Our Team</a>
+                      <a href="testimonial.html" class="dropdown-item">Testimonial</a>
+                      <!-- <a href="404.html" class="dropdown-item">404 Page</a> -->
                         
                     </div>
                 </div>
@@ -109,32 +113,17 @@
     <!-- Navbar End -->
     <div class="rightsidebar"> 
 
-      <div id="mapid" style="height: 855px;">
+      <div id="mapid">
 
       </div>
   </div>
 
 
-  <div class ="leftsidebar" style="margin-left:7px;">
-    <p class="Extra">Tier Level Present</p>
-    &#10004; Gold<br>
-    &#10004; Silver <br>
-    &#10004; Basic<br>
-    <p class="Extra">Artist Sytle Present</p>
-      &#10004; Traditional<br>
-      &#10004; Realism <br>
-      &#10004; Japanese<br>
-      &#10004; Neo_Traditional<br>
-      &#10004; Black_Gray <br>
-      &#10004; Watercolor<br>
-      &#10004; Minimalist<br>
-
-  
 
 
     <div class="filter">
-      <label for="searchInput">Search Tier Level:</label>
-      <input type="text" id="searchInput" oninput="filterItems()" placeholder="Filter Tier Level...">
+      <!-- <label for="searchInput">Search Tier Level:</label> -->
+      <input type="text" id="searchInput" oninput="filterItems()" placeholder="search Tier Level...">
       <button type="button" onclick="clearInput()">Clear</button>
     </div>
   
@@ -189,6 +178,7 @@
           }
         }
       }
+      
   
       // Add event listener for keydown event
       document.getElementById('searchInput').addEventListener('keydown', handleKeyPress);
@@ -200,8 +190,8 @@
   <!-- Filter  for Art Style -->
 
   <div class="filter1">
-    <label for="searchInput1">Search Artist Sytle:</label>
-    <input type="text" id="searchInput1" oninput="filterItems1()" placeholder="Filter by Artist Sytle...">
+    <!-- <label for="searchInput1">Search Artist Sytle:</label> -->
+    <input type="text" id="searchInput1" oninput="filterItems1()" placeholder="Search by Artist Sytle...">
     <button type="button" onclick="clearInput()">Clear</button>
   </div>
 
@@ -266,7 +256,24 @@
     document.getElementById('searchInput1').addEventListener('keydown', handleKeyPress);
   </script>
    
-</div>
+  <div class ="leftsidebar">
+    <p class="Extra">Tier Level Present</p>
+    <div class="Tierlevel1">
+    &#10004; Gold<br>
+    &#10004; Silver <br>
+    &#10004; Basic<br>
+    </div>
+    <p class="Extra">Artist Sytle Present</p>
+    <div class="artist_style1">
+      &#10004; Traditional<br>
+      &#10004; Realism <br>
+      &#10004; Japanese<br>
+      &#10004; Neo_Traditional<br>
+      &#10004; Black_Gray <br>
+      &#10004; Watercolor<br>
+      &#10004; Minimalist<br>
+      </div>
+    </div>
 
 
   <script>
@@ -406,9 +413,8 @@
       '<h3 style="display:inline;font-weight: bold;font-size:13px">About:</h3><p style="display:inline;">' + message1 + '</p><br>');
 
   }
-
- });
-});
+   });
+  });
 
         
     </script>
