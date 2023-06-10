@@ -99,7 +99,7 @@
     <!-- Navbar End -->
     <div class="rightsidebar"> 
 
-        <div id="mapid" style="height: 1200px;">
+        <div id="mapid">
   
         </div>
     </div>
@@ -107,68 +107,80 @@
   
     <div class ="leftsidebar">
       <p class="Extra">Personal Information</p>
+      <div class="inputtext">
       <p>Client's Location:</p>
-      <label for="longitude">Longitude:</label>
-      <input type="text" name="longitude" id="longitude" required><br>
-      <label for="latitude">Latitude:</label>
-      <input type="text" name="latitude" id="latitude"><br>
+      </div>
+
+      <div class="inputtext">
+        <label for="longitude">Longitude:</label>
+      </div>
+      <input class="inputdata" type="text" name="longitude" id="longitude" required><br>
+      
+      <div class="inputtext">
+        <label for="latitude">Latitude:</label>
+      </div>
+      <input class="inputdata" type="text" name="latitude" id="latitude"><br>
   
-    
-  <br>
-  <label for="nameInput">Client's name:</label>
-  <input type="text" id="nameInput" placeholder="Name">
-  <br>
-  <br>
-      <label for="phone_number">Phone Number:</label>
-          <br>
-      <input type="Phone_Number" id="Phone_Number" placeholder="Phone Number" />
-  <br>
-  <br>
-      <label for="emailInput">Email:</label>
-      <input type="email" id="emailInput" placeholder="Email">
-  <br>
-  <br>
-      <label for="Facebook-link">Facebook Link:</label>
-      <input type="Facebook" id="Facebook" placeholder="Facebook" />
-    <br>
-    <br>
+      <div class="inputtext">
+        <label for="nameInput">Client's name:</label>
+      </div>
+      <input class="inputdata" type="text" id="nameInput" placeholder="Name">
+      
+      <div class="inputtext">
+        <label for="phone_number">Phone Number:</label>
+      </div>  
+      <input class="inputdata" type="Phone_Number" id="Phone_Number" placeholder="Phone Number" />
+      
+      <div class="inputtext">
+        <label for="emailInput">Email:</label>
+      </div>
+      <input class="inputdata" type="email" id="emailInput" placeholder="Email">
+      
+      <div class="inputtext">
+        <label for="Facebook-link">Facebook Link:</label>
+      </div>
+      <input class="inputdata" type="Facebook" id="Facebook" placeholder="Facebook" />
+      
+      <div class="inputtext">
       <label for="Instagram_link">Instagram Link:</label>
-      <br>
-        <input type="Instagram" id="Instagram" placeholder="Instagram" />
-  <br>
-  <br>
+      </div>
+      <input class="inputdata" type="Instagram" id="Instagram" placeholder="Instagram" />
+      
+      <div class="inputtext">
         <label for="Tiers">Client Tiers Levels:</label>
-        <br>
-        <select type="Tiers"  id="Tiers" style="width:180px;height:27px">
+      </div>
+        <select type="Tiers"  id="Tiers" class="tiers">
           <option value="Basic">Basic</option>
           <option value="Silver">Silver</option>
           <option value="Gold">Gold</option>
         </select>
-  <br>
-  <br>
-  <label for="Artist_sytle">Artist sytle:</label>
-  <br>
-  <select type="Artist_sytle"  id="Artist_sytle" style="width:180px; height:27px">
-    <option value="Traditional">Traditional</option>
-    <option value="Realism">Realism</option>
-    <option value="Neo-Traditional">Neo-Traditional</option>
-    <option value="Japanese">Japanese</option>
-    <option value="Black-Gray">Black-Gray</option>
-    <option value="Watercolor">Watercolor</option>
-    <option value="Minimalist">Minimalist</option>
-  </select>
-  <br>
-  <br>
-  
-      <label for="imageInput">Select an Image:</label>
-      <input type="file" id="imageInput">
-      <br>
-      <br>
-      <label for="messageInput">Description:</label>
-      <input type="text" id="messageInput" placeholder="Description">
       
+        <div class="inputtext">
+          <label for="Artist_sytle">Artist sytle:</label>
+        </div>
+        <select class="tiers" type="Artist_sytle"  id="Artist_sytle">
+          <option value="Traditional">Traditional</option>
+          <option value="Realism">Realism</option>
+          <option value="Neo-Traditional">Neo-Traditional</option>
+          <option value="Japanese">Japanese</option>
+          <option value="Black-Gray">Black-Gray</option>
+          <option value="Watercolor">Watercolor</option>
+          <option value="Minimalist">Minimalist</option>
+        </select>
+        
+        <div class="inputtext">
+          <label for="imageInput">Select an Image:</label>
+        </div>
+        <input type="file" id="imageInput">
+
+        <div class="inputtext">
+          <label for="messageInput">About:</label>
+        </div>
+      <input class="inputdata" type="text" id="messageInput" placeholder="Description">
+      <br>
+      <br>
       <div class="inputBox">
-      <button onclick="uploadData()">Upload Data</button>
+      <button class="inputBox1"onclick="uploadData()">Upload Data</button>
       <br>
       <br>
       </div>
