@@ -113,31 +113,17 @@
     <!-- Navbar End -->
     <div class="rightsidebar"> 
 
-      <div id="mapid" style="height: 855px;">
+      <div id="mapid">
 
       </div>
   </div>
 
 
-  <div class ="leftsidebar" style="margin-left:7px;">
-    <p class="Extra">Tier Level Present</p>
-    &#10004; Gold<br>
-    &#10004; Silver <br>
-    &#10004; Basic<br>
-    <p class="Extra">Artist Sytle Present</p>
-    <div style="display:flex">
-      &#10004; Traditional<br>
-      &#10004; Realism <br>
-      &#10004; Japanese<br>
-      &#10004; Neo_Traditional<br>
-      &#10004; Black_Gray <br>
-      &#10004; Watercolor<br>
-      &#10004; Minimalist<br>
-      </div>
 
-    <div class="filter" style="display:flex">
-      <label for="searchInput">Search Tier Level:</label>
-      <input type="text" id="searchInput" oninput="filterItems()" placeholder="Filter Tier Level...">
+
+    <div class="filter">
+      <!-- <label for="searchInput">Search Tier Level:</label> -->
+      <input type="text" id="searchInput" oninput="filterItems()" placeholder="search Tier Level...">
       <button type="button" onclick="clearInput()">Clear</button>
     </div>
   
@@ -192,6 +178,7 @@
           }
         }
       }
+      
   
       // Add event listener for keydown event
       document.getElementById('searchInput').addEventListener('keydown', handleKeyPress);
@@ -202,9 +189,9 @@
 
   <!-- Filter  for Art Style -->
 
-  <div class="filter1" style="display:flex">
-    <label for="searchInput1">Search Artist Sytle:</label>
-    <input type="text" id="searchInput1" oninput="filterItems1()" placeholder="Filter by Artist Sytle...">
+  <div class="filter1">
+    <!-- <label for="searchInput1">Search Artist Sytle:</label> -->
+    <input type="text" id="searchInput1" oninput="filterItems1()" placeholder="Search by Artist Sytle...">
     <button type="button" onclick="clearInput()">Clear</button>
   </div>
 
@@ -269,7 +256,24 @@
     document.getElementById('searchInput1').addEventListener('keydown', handleKeyPress);
   </script>
    
-</div>
+  <div class ="leftsidebar">
+    <p class="Extra">Tier Level Present</p>
+    <div class="Tierlevel1">
+    &#10004; Gold<br>
+    &#10004; Silver <br>
+    &#10004; Basic<br>
+    </div>
+    <p class="Extra">Artist Sytle Present</p>
+    <div class="artist_style1">
+      &#10004; Traditional<br>
+      &#10004; Realism <br>
+      &#10004; Japanese<br>
+      &#10004; Neo_Traditional<br>
+      &#10004; Black_Gray <br>
+      &#10004; Watercolor<br>
+      &#10004; Minimalist<br>
+      </div>
+    </div>
 
 
   <script>
