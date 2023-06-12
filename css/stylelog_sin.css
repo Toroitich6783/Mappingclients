@@ -16,7 +16,7 @@
 	position:absolute;
 	top:60px;
 	left:0px;
-	color:#FBFE72;
+	color:#B5179E;
 	padding:20px;
 	text-align:center;
 	font-size:42px;
@@ -365,7 +365,7 @@
 	
 	
 	.for_login a{
-		color:#FBFE72;
+		color:#B5179E;
 	}
 	.signupMessage1{
 		color: red; 
@@ -417,7 +417,7 @@
 		position:absolute;
 		top:60px;
 		left:0px;
-		color:#FBFE72;
+		color:#B5179E;
 		padding:20px;
 		text-align:center;
 		font-size:32px;

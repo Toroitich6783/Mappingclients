@@ -1,6 +1,10 @@
 
  #mapid{
+  height: 810px;
+ }
+ #mapid1{
   height: 840px;
+
  }
  .right {
   right: 0;
@@ -10,14 +14,14 @@
   }
   .leftsidebar{
       background-color: white;
-      height: 640px;
+      height: 810px;
       width: 16%;
       }
 
 
       .rightsidebar{
           background-color: none;
-          height: 640px;
+          height: 810px;
           width: 84%;
           float: right;
           z-index: 0; /* Set the z-index of the map */
@@ -81,6 +85,7 @@
           .Extra{
             font-weight: bold;
             text-decoration: underline;
+            color: #B5179E;
             /* display: flex; */
           }
 
@@ -102,9 +107,10 @@
           }
           
           .logo-and-name img {
-            width: 60px; /* Adjust the size of the logo as needed */
-            height: 60px;
-            border-radius: 50%; /* Add border radius for a rounded shape */
+            width: 110px; /* Adjust the size of the logo as needed */
+            height: 110px;
+            /* border-radius: 100%;  */
+            /* Add border radius for a rounded shape */
             
 
           }
@@ -144,10 +150,11 @@
           }
 
           .filter1 {
-            margin-top: 380px;
+            margin-top: 5px;
             position:absolute;
             z-index: 9999;
-            margin-left: 209px;
+            margin-left: 0px;
+            width: 12px;
             display:flex
 
           }
@@ -183,11 +190,11 @@
           }
           .artist_style1{
             display:flex;
-            color: green;
+            color: black;
           }
           .Tierlevel1{
             display:flex;
-            color: green;
+            color: #B5179E;
           }
     
 /* Mobile CSS Start */
@@ -196,7 +203,7 @@
             .Extra{
               font-weight: bold;
               text-decoration: underline;
-              color: red;
+              color: #B5179E;
               /* display: flex; */
             }
 #searchInput{
@@ -241,6 +248,10 @@
               display:flex
   
             }
+            #searchInput1{
+              width: 10%;
+            
+            }
             .item1 {
               display: none;
               
@@ -262,7 +273,7 @@
 
             .artist_style1{
               font-size: 13px;
-              color: green;
+              color: black;
 
             }
             .Tierlevel1{
@@ -271,17 +282,17 @@
               color: green;
             }
             .leftsidebar{
-              background-color:black;
+              background-color:white;
               height: 100%;
               width: 100%;
-              margin-top: 600px;
+              margin-top: 60px;
 
               }
 
         
               .rightsidebar{
                 background-color: none;
-                height: 640px;
+                height: 1040px;
                 width: 100%;
                 float: right;
                 z-index: 0; /* Set the z-index of the map */

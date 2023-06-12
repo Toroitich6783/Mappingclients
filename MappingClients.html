@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Company Name - Quality Tattoos!!</title>
+    <title>Babylonia Care - Quality Tattoos!!</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
@@ -63,11 +63,11 @@
 
 
     <!-- Navbar Start -->
-    <nav class="navbar navbar-expand-lg bg-white navbar-light shadow border-top border-5 border-primary sticky-top p-0">
-        <a href="index.html" class="navbar-brand bg-success d-flex align-items-center px-4 px-lg-5">
+    <nav class="navbar navbar-expand-lg bg-white navbar-light shadow border-top border-5 border-dark sticky-top p-0">
+        <a href="index.html" class="navbar-brand bg-light d-flex align-items-center px-4 px-lg-5">
             <div class="logo-and-name">
-                <img src="tatlogo.jpeg" alt="Company Logo">
-                <h1 class="company-name" style="margin-top:50px;">Company Name</h1>
+                <img src="v3 tran.png" alt="Company Logo">
+                <h1 class="company-name" style="margin-top:50px;">Babylonia Care</h1>
               </div>        </a>
         <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
             <span class="navbar-toggler-icon"></span>
@@ -80,9 +80,9 @@
                 <div class="nav-item dropdown">
                     <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Others</a>
                     <div class="dropdown-menu fade-up m-0">
-                      <a href="MappingClients.html" class="dropdown-item">Map Clients</a>
-                      <a href="ecomClients.html" class="dropdown-item">Client Location</a>
-                      <a href="Datamanagement.html" class="dropdown-item">Data Management</a>
+                      <a href="MappingClients.html" class="dropdown-item" style="color: #B5179E">Map Clients</a>
+                      <a href="index.html" class="dropdown-item " style="color: #B5179E">Client Location</a>
+                      <a href="Datamanagement.html" class="dropdown-item" style="color: #B5179E">Data Management</a>
                       <a href="price.html" class="dropdown-item">Pricing Plan</a>
                       <a href="feature.html" class="dropdown-item">Features</a>
                       <a href="team.html" class="dropdown-item">Our Team</a>
@@ -93,20 +93,20 @@
                 </div>
                 <a href="contact.html" class="nav-item nav-link">Contact</a>
             </div>
-            <h4 class="m-0 pe-lg-5 d-none d-lg-block"><i class="fa fa-headphones text-success me-3"></i>+012 345 6789</h4>
+            <h4 class="m-0 pe-lg-5 d-none d-lg-block"><i class="fa fa-headphones text-success me-3"></i>+36 606 0375 89</h4>
         </div>
     </nav>
     <!-- Navbar End -->
     <div class="rightsidebar"> 
 
-        <div id="mapid">
+        <div id="mapid1">
   
         </div>
     </div>
   
   
     <div class ="leftsidebar">
-      <p class="Extra">Personal Information</p>
+      <p class="Extra">Clients Information:</p>
       <div class="inputtext">
       <p>Client's Location:</p>
       </div>
@@ -130,11 +130,19 @@
         <label for="phone_number">Phone Number:</label>
       </div>  
       <input class="inputdata" type="Phone_Number" id="Phone_Number" placeholder="Phone Number" />
+
+      <div class="inputtext">
+        <label for="Address">Address:</label>
+      </div>  
+      <input class="inputdata" type="Address" id="Address" placeholder="Address" />
+      
       
       <div class="inputtext">
         <label for="emailInput">Email:</label>
       </div>
       <input class="inputdata" type="email" id="emailInput" placeholder="Email">
+
+      
       
       <div class="inputtext">
         <label for="Facebook-link">Facebook Link:</label>
@@ -249,7 +257,8 @@
           var Artist_sytle = document.getElementById('Artist_sytle');
           var Artist_sytle1 = Artist_sytle.value;
           
-          
+          var Address = document.getElementById('Address');
+          var Address1 = Address.value;
           
           // Create a storage reference for the image file
           var imageRef = storageRef.child('contactForm/' + file.name);
@@ -273,6 +282,7 @@
                 Instagram1:Instagram1,
                 Tiers1:Tiers1,
                 Artist_sytle1:Artist_sytle1,
+                Address1:Address1
               }).then(function() {
                 // Display success alert
                 displayAlert("Data uploaded successfully.");
@@ -289,6 +299,7 @@
                 Instagram.value="";
                 Tiers.value="";
                 Artist_sytle.value="";
+                Address.value="";
               }).catch(function(error) {
                 console.log(error);
               });
@@ -313,7 +324,7 @@
       </script>
   
       <script>
-          var map = L.map('mapid').setView([39.96,-3.779], 7);
+          var map = L.map('mapid1').setView([27.9701,-15.5956], 11);
   
           L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
               attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors',
@@ -371,7 +382,7 @@
   
       L.control.layers(baseMaps).addTo(map);
        // Create a marker with draggable option
-  var marker = L.marker([39.96, -3.779], {
+  var marker = L.marker([27.9701,-15.5956], {
     draggable: true
   }).addTo(map);
   
