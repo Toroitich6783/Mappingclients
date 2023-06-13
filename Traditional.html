@@ -62,26 +62,27 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/1.0.4/leaflet.draw.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/1.0.4/leaflet.draw.css" />
 <style>
-    #searchInput1{
-        width: 145px;
-    }
     table {
-      border-collapse: collapse;
-      width: 99%;
-    }
-    th, td {
-      padding: 8px;
-      border: 1px solid #ddd;
-      font-size: 12px;
+        border-collapse: collapse;
+        width: 10%;
+      }
+      th, td {
+        padding: 8px;
+        border: 1px solid #ddd;
+        font-size: 10px;
 
-    }
-    th {
-      background-color: #f2f2f2;
-      font-weight: bold;
-    }
-    tr:nth-child(even) {
-      background-color: #f9f9f9;
-    }
+      }
+      th {
+        background-color: #f2f2f2;
+        font-weight: bold;
+      }
+      tr:nth-child(even) {
+        background-color: #f9f9f9;
+      }
+      .table-container {
+        max-height: 330px;
+        overflow-y: scroll;
+      }
 </style>
 
   
@@ -111,7 +112,7 @@
             <div class="navbar-nav ms-auto p-4 p-lg-0">
                 <a href="index.html" class="nav-item nav-link active">Home</a>
                 <a href="about.html" class="nav-item nav-link">About</a>
-                <a href="service.html" class="nav-item nav-link">Services</a>
+                <a href="service.html" class="nav-item nav-link">Products</a>
                 <div class="nav-item dropdown">
                     <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Others</a>
                     <div class="dropdown-menu fade-up m-0">
@@ -299,46 +300,90 @@
       &#10004; Minimalist<br>
       </div>
 <br>
-      <p class="Extra">Realism Artist</p>
+      <p class="Extra">Traditional Artist</p>
       <div id="data-container"></div>
+
+      <div class="table-container">
+        <table id="contact-table">
+          <thead>
+            <tr>
+              <th>Artist Name</th>
+              <th>Instagram</th>
+              <th>Tier Level</th>
+            </tr>
+          </thead>
+          <tbody id="table-body"></tbody>
+        </table>
+      </div>
     
       <script>
         var firebaseConfig = {
-          apiKey: "AIzaSyD0asHo0qDj5zYplavVzFUsNWL1Da1e1c8",
-          authDomain: "sendinfo-9f1cb.firebaseapp.com",
-          databaseURL: "https://sendinfo-9f1cb-default-rtdb.firebaseio.com",
-          projectId: "sendinfo-9f1cb",
-          storageBucket: "sendinfo-9f1cb.appspot.com",
-          messagingSenderId: "842821060420",
-          appId: "1:842821060420:web:47008a44a86e78be69b911"        };
+            apiKey: "AIzaSyD0asHo0qDj5zYplavVzFUsNWL1Da1e1c8",
+            authDomain: "sendinfo-9f1cb.firebaseapp.com",
+            databaseURL: "https://sendinfo-9f1cb-default-rtdb.firebaseio.com",
+            projectId: "sendinfo-9f1cb",
+            storageBucket: "sendinfo-9f1cb.appspot.com",
+            messagingSenderId: "842821060420",
+            appId: "1:842821060420:web:47008a44a86e78be69b911"
+        };
         firebase.initializeApp(firebaseConfig);
     
         var database = firebase.database().ref('contactForm');
     
         database.once('value', function(snapshot) {
-          var table = document.createElement('table');
-          table.innerHTML = '<tr><th>Artist Name</th><th>Phone Number</th></tr>';
+          var tableBody = document.getElementById('table-body');
+    
+          var goldRows = [];
+          var silverRows = [];
+          var basicRows = [];
     
           snapshot.forEach(function(childSnapshot) {
             var childData = childSnapshot.val();
             var name = childData.name;
-            var phoneNumber = childData.Phone_Number1;
-            var tierLevel = childData.Artist_sytle1;
+            var Instagram = childData.Instagram1;
+            var tierLevel = childData.Tiers1;
+            var artstyle2 = childData.Artist_sytle1;
     
-            // Filter records based on tier level
-            if (tierLevel === 'Traditional') {
+            var instagramLink = '<a style="color:green;" href="' + Instagram + '">' + Instagram + '</a>';
+    
+            // Filter records based on art style
+            if (artstyle2 === 'Traditional') {
               var tableRow = document.createElement('tr');
               tableRow.innerHTML = '<td>' + name + '</td>' +
-                                   '<td>' + phoneNumber + '</td>';
+                                   '<td>' + instagramLink + '</td>' +
+                                   '<td>' + tierLevel + '</td>';
     
-              table.appendChild(tableRow);
+              // Store rows based on tier level
+              if (tierLevel === 'Gold') {
+                goldRows.push(tableRow);
+              } else if (tierLevel === 'Silver') {
+                silverRows.push(tableRow);
+              } else if (tierLevel === 'Basic') {
+                basicRows.push(tableRow);
+              }
             }
           });
     
-          document.getElementById('data-container').appendChild(table);
+          // Append rows to the table in the desired order: Gold, Silver, Basic
+          goldRows.forEach(function(row) {
+            tableBody.appendChild(row);
+          });
+          silverRows.forEach(function(row) {
+            tableBody.appendChild(row);
+          });
+          basicRows.forEach(function(row) {
+            tableBody.appendChild(row);
+          });
         });
       </script>
-    </div>
+
+        <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.3s">
+            <div class="service-item p-4">
+                
+                <a class="btn-slide mt-2" href="Traditionalclients.html"><i class="fa fa-arrow-right"></i><span>Expand</span></a>
+            </div>
+        </div>
+      </div>
     
 
   <script>
@@ -605,8 +650,8 @@
 <div class="container-xxl py-5">
   <div class="container py-5">
       <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
-          <h6 class="text-secondary text-uppercase">Our Services</h6>
-          <h1 class="mb-5">Explore Our Services</h1>
+          <h6 class="text-secondary text-uppercase">Our Products</h6>
+          <h1 class="mb-5">Explore Our Products</h1>
       </div>
       <div class="row g-4">
           <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.3s">
@@ -682,8 +727,8 @@
   <div class="container feature py-5 px-lg-0">
       <div class="row g-5 mx-lg-0">
           <div class="col-lg-6 feature-text wow fadeInUp" data-wow-delay="0.1s">
-              <h6 class="text-secondary text-uppercase mb-3">Our Tiers Services</h6>
-              <h1 class="mb-5"> Discover Our Tiers of Ink-credible Services for Tattoos!</h1>
+              <h6 class="text-secondary text-uppercase mb-3">Our Tiers Products</h6>
+              <h1 class="mb-5"> Discover Our Tiers of Ink-credible Products for Tattoos!</h1>
               <div class="d-flex mb-5 wow fadeInUp" data-wow-delay="0.3s">
                   <i class="fa fa-medal text-success fa-3x flex-shrink-0"></i>
                   <div class="ms-4">
@@ -695,14 +740,14 @@
                   <i class="fa fa-medal text-secondary fa-3x flex-shrink-0"></i>
                   <div class="ms-4">
                       <h5>Silver Tier</h5>
-                      <p class="mb-0">Experience elevated services and personalized attention with our exclusive Silver Tier.</p>
+                      <p class="mb-0">Experience elevated Products and personalized attention with our exclusive Silver Tier.</p>
                   </div>
               </div>
               <div class="d-flex mb-0 wow fadeInUp" data-wow-delay="0.7s">
                   <i class="fa fa-medal text-warning fa-3x flex-shrink-0"></i>
                   <div class="ms-4">
                       <h5>Gold Tier</h5>
-                      <p class="mb-0">Unlock the pinnacle of artistic excellence with our prestigious Gold tier services.</p>
+                      <p class="mb-0">Unlock the pinnacle of artistic excellence with our prestigious Gold tier Products.</p>
                   </div>
               </div>
           </div>
@@ -943,7 +988,7 @@
               </div>
           </div>
           <div class="col-lg-3 col-md-7">
-              <h4 class="text-light mb-4">Services</h4>
+              <h4 class="text-light mb-4">Products</h4>
               <a class="btn btn-link" href="">Traditional</a>
               <a class="btn btn-link" href="">Realism</a>
               <a class="btn btn-link" href="">Neo-Traditional</a>
@@ -957,7 +1002,7 @@
               <h4 class="text-light mb-4">Quick Links</h4>
               <a class="btn btn-link" href="">About Us</a>
               <a class="btn btn-link" href="">Contact Us</a>
-              <a class="btn btn-link" href="">Our Services</a>
+              <a class="btn btn-link" href="">Our Products</a>
               <a class="btn btn-link" href="">Terms & Condition</a>
               <a class="btn btn-link" href="">Support</a>
           </div>
@@ -979,7 +1024,7 @@
       <div class="copyright">
           <div class="row">
               <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                  &copy; <a class="border-bottom" href="#">Your Site Name</a>, All Right Reserved.
+                  &copy; <a class="border-bottom" href="#">Babylonia Careme</a>, All Right Reserved.
               </div>
               <div class="col-md-6 text-center text-md-end">
                   <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
